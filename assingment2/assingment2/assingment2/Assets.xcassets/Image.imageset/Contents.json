@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Shopping_Cart_Trolley_Vector_Hd_Images__Gray_Shopping_Trolley_Logo__Shopping_Cart_Clipart__You_Can_Use_For_Online_Stores__Isolated_PNG_Image_For_Free_Download-removebg-preview.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Shopping_Cart_Trolley_Vector_Hd_Images__Gray_Shopping_Trolley_Logo__Shopping_Cart_Clipart__You_Can_Use_For_Online_Stores__Isolated_PNG_Image_For_Free_Download-removebg-preview@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Shopping_Cart_Trolley_Vector_Hd_Images__Gray_Shopping_Trolley_Logo__Shopping_Cart_Clipart__You_Can_Use_For_Online_Stores__Isolated_PNG_Image_For_Free_Download-removebg-preview@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
