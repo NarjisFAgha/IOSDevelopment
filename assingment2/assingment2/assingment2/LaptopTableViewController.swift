@@ -9,15 +9,12 @@ import UIKit
 
 class LaptopTableViewController: UITableViewController {
 
+    var studentNumber: String = "8996799"
     // Array used to store laptop details
         var laptops: [(name: String, price: String, additionalInfo: String)] = [
             ("MacBook Pro","16GB RAM", "$1299"),
             ("Dell XP", "512GB SSD", "$999"),
-            ("Acer", "64GB", "$1099"),
-            ("HP Spectre", "Touchscreen", "$1099"),
-            ("Dell Inspiron 15", "128GB SSD", "$1299"),
-            ("MacBook M1", "512GB", "$1599"),
-            ("IBM Tablet","8996799", "$999")
+            ("Acer", "64GB", "$1099")
         ]
 
         override func viewDidLoad() {
@@ -34,11 +31,20 @@ class LaptopTableViewController: UITableViewController {
         }
 
         // function to add a new laptop to the list
-        @objc func addLaptop() {
-            let newLaptop = ("Samsung", "256GB SSD", "$899")
-            laptops.append(newLaptop)
-            tableView.reloadData()
-        }
+    @objc func addLaptop() {
+        if let fifthDigit = Int(String(studentNumber[studentNumber.index(studentNumber.startIndex, offsetBy: 4)])) {
+                   if laptops.count == fifthDigit-1 {
+                       let newLaptop = ("IBM Tablet", "8996799", "$999")
+                       laptops.insert(newLaptop, at: 6)
+                   } else {
+                       let newLaptop = ("Samsung", "256GB SSD", "$899")
+                       laptops.append(newLaptop)
+                   }
+               }
+               tableView.reloadData()
+       }
+    
+
 
         // Close the laptop table view
         @objc func closeView() {
