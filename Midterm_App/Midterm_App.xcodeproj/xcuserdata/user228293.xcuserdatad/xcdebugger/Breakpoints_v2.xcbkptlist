@@ -3,4 +3,222 @@
    uuid = "1B9D412E-D07D-4174-9070-F25C0F3BE424"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Midterm_App/TaskTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "TaskTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886 - 4d5de4bba7893f36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskTableViewCell.titleLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886 - a7c070e84210e322"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskTableViewCell.titleLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886 - 91fd618d6eae8033"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskTableViewCell.titleLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886 - ca934264379f3154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskTableViewCell.titleLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886 - cd74f0039a5e9e1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Midterm_App.TaskTableViewCell"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "137">
+               </Location>
+               <Location
+                  uuid = "0B3CC8F0-2ABE-4599-BE39-88FB446B5886 - d93859f20a6944bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Midterm_App.TaskTableViewCell&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "94">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Midterm_App/TaskDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "TaskDetailViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B - 17cdd399d9bee6f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskDetailViewController.taskDescriptionLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B - d4955353f64542fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskDetailViewController.taskDescriptionLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B - 78ca0797e5f8bff3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskDetailViewController.taskDescriptionLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B - 60689fac94cbd905"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskDetailViewController.taskDescriptionLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B - af20e596f2f6ebac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskDetailViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Midterm_App.TaskDetailViewController"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "167">
+               </Location>
+               <Location
+                  uuid = "1D9832D2-EFDB-4B7B-A9AA-9F4AC168F89B - 17eec89512069f92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Midterm_App.TaskDetailViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Midterm_App.TaskDetailViewController&gt;"
+                  moduleName = "Midterm_App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user228293/Documents/iOS%20Project/IOSDevelopment/Midterm_App/Midterm_App/TaskDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
