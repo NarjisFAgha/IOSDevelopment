@@ -93,7 +93,15 @@ class CreateTask_ViewController: UIViewController, UIImagePickerControllerDelega
                TaskManager.shared.addTask(task)
                
                showAlert(message: "Task created successfully!")
+        resetFields()
            }
+    func resetFields() {
+          taskTitleTextField.text = ""
+          taskDescriptionTextField.text = ""
+          dueDateTextField.text = ""
+        imageView.image = UIImage(systemName: "doc.fill.badge.plus")
+          statusButton.setTitle("Select Status", for: .normal)
+      }
     
     @IBAction func addImageButton(_ sender: Any) {
         // Open image picker to select an image

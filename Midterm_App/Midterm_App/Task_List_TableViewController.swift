@@ -1,18 +1,13 @@
-//
-//  Task_List_TableViewController.swift
-//  Midterm_App
-//
-//  Created by user228293 on 7/3/24.
-//
-
-// Task_List_TableViewController.swift
-
 import UIKit
 
 class Task_List_TableViewController: UITableViewController {
 
+    @IBOutlet weak var SettingButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44.0  // Provide an estimated row height
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,13 +26,18 @@ class Task_List_TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as? TaskTableViewCell else {
+            return UITableViewCell()
+        }
         let task = TaskManager.shared.tasks[indexPath.row]
 
-        cell.textLabel?.text = task.title
-        cell.textLabel?.numberOfLines = 0  // Enable multiple lines
-        cell.detailTextLabel?.text = "Due: \(task.dueDate) | Status: \(task.status)"
-        cell.detailTextLabel?.numberOfLines = 0  // Enable multiple lines
+        cell.titleLabel.text = task.title
+        cell.titleLabel.numberOfLines = 0  // Enable multiple lines
+        cell.statusLabel.text = task.status
+        cell.statusLabel.numberOfLines = 0  // Enable multiple lines
+        cell.dueDateLabel.text = task.dueDate
+        cell.dueDateLabel.numberOfLines = 0
+
 
         return cell
     }
