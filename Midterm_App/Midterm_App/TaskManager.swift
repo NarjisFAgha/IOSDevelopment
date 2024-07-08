@@ -27,8 +27,7 @@ class TaskManager {
             // Optional: Notify listeners about the update, if needed
         }
     }
-	
-
+    
     func addTask(_ task: Task) {
         tasks.append(task)
     }
@@ -42,4 +41,3 @@ class TaskManager {
         tasks.append(contentsOf: defaultTasks)
     }
 }
-
