@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2DB06AAE2C3C4E110022B736 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB06AAD2C3C4E110022B736 /* CarsViewController.swift */; };
-		2DB06AB22C3C4FF10022B736 /* FreindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB06AB12C3C4FF10022B736 /* FreindsViewController.swift */; };
-		2DB06AB42C3C51C90022B736 /* FriendCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB06AB32C3C51C90022B736 /* FriendCellTableViewCell.swift */; };
+		2DD109792C3CC02E00650FE4 /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD109782C3CC02E00650FE4 /* FriendTableViewController.swift */; };
+		2DD1097B2C3CC19000650FE4 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1097A2C3CC19000650FE4 /* AddFriendViewController.swift */; };
+		2DD109802C3CC58600650FE4 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1097E2C3CC58600650FE4 /* FriendTableViewCell.swift */; };
+		2DD109812C3CC58600650FE4 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD1097F2C3CC58600650FE4 /* FriendTableViewCell.xib */; };
 		2DD3A41C2C3C0DAC00894F4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3A41B2C3C0DAC00894F4B /* AppDelegate.swift */; };
 		2DD3A41E2C3C0DAC00894F4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3A41D2C3C0DAC00894F4B /* SceneDelegate.swift */; };
 		2DD3A4202C3C0DAC00894F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3A41F2C3C0DAC00894F4B /* ViewController.swift */; };
@@ -41,8 +43,10 @@
 
 /* Begin PBXFileReference section */
 		2DB06AAD2C3C4E110022B736 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
-		2DB06AB12C3C4FF10022B736 /* FreindsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsViewController.swift; sourceTree = "<group>"; };
-		2DB06AB32C3C51C90022B736 /* FriendCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellTableViewCell.swift; sourceTree = "<group>"; };
+		2DD109782C3CC02E00650FE4 /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
+		2DD1097A2C3CC19000650FE4 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		2DD1097E2C3CC58600650FE4 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		2DD1097F2C3CC58600650FE4 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		2DD3A4182C3C0DAC00894F4B /* Lab6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD3A41B2C3C0DAC00894F4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD3A41D2C3C0DAC00894F4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,9 +119,11 @@
 				2DD3A4262C3C0DAD00894F4B /* LaunchScreen.storyboard */,
 				2DD3A4292C3C0DAD00894F4B /* Info.plist */,
 				2DB06AAD2C3C4E110022B736 /* CarsViewController.swift */,
-				2DB06AB12C3C4FF10022B736 /* FreindsViewController.swift */,
-				2DB06AB32C3C51C90022B736 /* FriendCellTableViewCell.swift */,
 				2DE024072C3C6F6000077FA2 /* TodoViewController.swift */,
+				2DD109782C3CC02E00650FE4 /* FriendTableViewController.swift */,
+				2DD1097A2C3CC19000650FE4 /* AddFriendViewController.swift */,
+				2DD1097E2C3CC58600650FE4 /* FriendTableViewCell.swift */,
+				2DD1097F2C3CC58600650FE4 /* FriendTableViewCell.xib */,
 			);
 			path = Lab6;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 				2DD3A4282C3C0DAD00894F4B /* LaunchScreen.storyboard in Resources */,
 				2DD3A4252C3C0DAD00894F4B /* Assets.xcassets in Resources */,
 				2DD3A4232C3C0DAC00894F4B /* Main.storyboard in Resources */,
+				2DD109812C3CC58600650FE4 /* FriendTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DB06AB42C3C51C90022B736 /* FriendCellTableViewCell.swift in Sources */,
 				2DD3A4202C3C0DAC00894F4B /* ViewController.swift in Sources */,
+				2DD1097B2C3CC19000650FE4 /* AddFriendViewController.swift in Sources */,
 				2DE024082C3C6F6000077FA2 /* TodoViewController.swift in Sources */,
-				2DB06AB22C3C4FF10022B736 /* FreindsViewController.swift in Sources */,
 				2DD3A41C2C3C0DAC00894F4B /* AppDelegate.swift in Sources */,
 				2DD3A41E2C3C0DAC00894F4B /* SceneDelegate.swift in Sources */,
 				2DB06AAE2C3C4E110022B736 /* CarsViewController.swift in Sources */,
+				2DD109792C3CC02E00650FE4 /* FriendTableViewController.swift in Sources */,
+				2DD109802C3CC58600650FE4 /* FriendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@
 		2D703A622C3C941C00E28228 /* week10gpsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D703A612C3C941C00E28228 /* week10gpsUITests.swift */; };
 		2D703A642C3C941C00E28228 /* week10gpsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D703A632C3C941C00E28228 /* week10gpsUITestsLaunchTests.swift */; };
 		2D703A712C3C95C800E28228 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D703A702C3C95C800E28228 /* MapViewController.swift */; };
+		2D703A732C3C9F9200E28228 /* MapDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D703A722C3C9F9200E28228 /* MapDirectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2D703A612C3C941C00E28228 /* week10gpsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week10gpsUITests.swift; sourceTree = "<group>"; };
 		2D703A632C3C941C00E28228 /* week10gpsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week10gpsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2D703A702C3C95C800E28228 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2D703A722C3C9F9200E28228 /* MapDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDirectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				2D703A4B2C3C941C00E28228 /* LaunchScreen.storyboard */,
 				2D703A4E2C3C941C00E28228 /* Info.plist */,
 				2D703A702C3C95C800E28228 /* MapViewController.swift */,
+				2D703A722C3C9F9200E28228 /* MapDirectionViewController.swift */,
 			);
 			path = week10gps;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				2D703A452C3C941A00E28228 /* ViewController.swift in Sources */,
 				2D703A412C3C941A00E28228 /* AppDelegate.swift in Sources */,
 				2D703A432C3C941A00E28228 /* SceneDelegate.swift in Sources */,
+				2D703A732C3C9F9200E28228 /* MapDirectionViewController.swift in Sources */,
 				2D703A712C3C95C800E28228 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

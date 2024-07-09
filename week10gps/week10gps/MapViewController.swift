@@ -24,8 +24,24 @@ class MapViewController: UIViewController , CLLocationManagerDelegate,MKMapViewD
         locationManger.startUpdatingLocation()
         
     }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            locationManger.startUpdatingLocation()
+            render(location)
+        }
+    }
     
-
+    func render(_ location: CLLocation){
+        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        let pin = MKPointAnnotation ()
+        
+        pin.coordinate = coordinate
+        mapView.addAnnotation(pin)
+        mapView.setRegion(region, animated: true)
+        locationLable.text = "Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)"
+    }
     /*
     // MARK: - Navigation
 
