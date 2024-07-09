@@ -37,11 +37,22 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
       override func viewDidLoad() {
           super.viewDidLoad()
           
-          tableview.delegate = self
-          tableview.dataSource = self
-          tableview.register(UITableViewCell.self, forCellReuseIdentifier: "TodoCell")
-      }
-    
+          // Hardcoded sections with to-do items
+                 sections = [
+                     Section(name: "Groceries", items: [TodoItem(name: "Buy milk"), TodoItem(name: "Buy eggs")]),
+                     Section(name: "Work", items: [TodoItem(name: "Finish report"), TodoItem(name: "Email client")]),
+                     Section(name: "Home", items: [TodoItem(name: "Clean kitchen"), TodoItem(name: "Mow lawn")]),
+                     Section(name: "Fitness", items: [TodoItem(name: "Morning run"), TodoItem(name: "Gym session")]),
+                     Section(name: "Hobbies", items: [TodoItem(name: "Read book"), TodoItem(name: "Paint landscape")]),
+                     Section(name: "Travel", items: [TodoItem(name: "Book flight"), TodoItem(name: "Pack luggage")]),
+                     Section(name: "Shopping", items: [TodoItem(name: "Buy new shoes"), TodoItem(name: "Order new laptop")]),
+                     Section(name: "Health", items: [TodoItem(name: "Doctor appointment"), TodoItem(name: "Buy vitamins")])
+                 ]
+                 
+                 tableview.delegate = self
+                 tableview.dataSource = self
+                 tableview.register(UITableViewCell.self, forCellReuseIdentifier: "TodoCell")
+             }
     @IBAction func ClearButton(_ sender: Any) {
         TodoListTextFeild.text = ""
         SectionTextFeild.text = ""

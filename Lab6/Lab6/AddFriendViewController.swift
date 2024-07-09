@@ -7,20 +7,50 @@
 
 import UIKit
 
-class AddFriendViewController: UIViewController {
+protocol AddFriendDelegate: AnyObject {
+    func didAddFriend(friend: [String: String])
+}
 
-    @IBOutlet weak var addbutton: UIButton!
-    @IBOutlet weak var clearbutton: UIButton!
+class AddFriendViewController: UIViewController {
     @IBOutlet weak var emailtext: UITextField!
     @IBOutlet weak var phonetext: UITextField!
     @IBOutlet weak var FirstNameText: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    weak var delegate: AddFriendDelegate?
 
-        // Do any additional setup after loading the view.
-    }
+       override func viewDidLoad() {
+           super.viewDidLoad()
+       }
+
     
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        FirstNameText.text = ""
+        emailtext.text = ""
+        phonetext.text = ""
+    }
+    @IBAction func addButtonTapped(_ sender: Any) {
+        guard let name = FirstNameText.text, !name.isEmpty,
+                      let phone = phonetext.text, !phone.isEmpty,
+                      let email = emailtext.text, !email.isEmpty else {
+                    showAlert(title: "Important", message: "Please Enter all the feilds")
+                    return
+    }
+        let friend = ["name": name, "phone": phone, "email": email]
+               delegate?.didAddFriend(friend: friend)
+               showAlert(title: "Done", message: "Added") {
+                   self.navigationController?.popViewController(animated: true)
+               }
+           }
+           
+           private func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+               let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+               alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                   completion?()
+               })
+               present(alertController, animated: true, completion: nil)
+           }
+       }
 
+    
     /*
     // MARK: - Navigation
 
@@ -31,4 +61,4 @@ class AddFriendViewController: UIViewController {
     }
     */
 
-}
+

@@ -14,9 +14,14 @@ class Car {
 
 class CarsViewController: UITableViewController {
     var cars = [
-        Car(image: UIImage(named: "car1")!, make: "Toyota", model: "Corolla"),
-        Car(image: UIImage(named: "car2")!, make: "Honda", model: "Civic"),
-        // Add more sample cars
+        Car(image: UIImage(named: "defaultcar")!, make: "Toyota", model: "Corolla"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Honda", model: "Civic"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Suzuki", model: "Maruti"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Tata", model: "Nano"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Suzuki", model: "Swift"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Tata", model: "Nexa"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Mahindra", model: "Bulero"),
+        Car(image: UIImage(named: "defaultcar")!, make: "Mahindra", model: "Thar")
     ]
     
     override func viewDidLoad() {

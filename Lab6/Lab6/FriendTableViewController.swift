@@ -1,97 +1,85 @@
-//
-//  FriendTableViewController.swift
-//  Lab6
-//
-//  Created by user228293 on 7/8/24.
-//
-
 import UIKit
 
-class Friend {
-    var name: String
-    var email: String
-    var phone: String
-    var foodImage: UIImage
-    var sportsImage: UIImage
-    var cityImage: UIImage
-    
-    init(name: String, email: String, phone: String, foodImage: UIImage, sportsImage: UIImage, cityImage: UIImage) {
-        self.name = name
-        self.email = email
-        self.phone = phone
-        self.foodImage = foodImage
-        self.sportsImage = sportsImage
-        self.cityImage = cityImage
-    }
-}
-
 class FriendTableViewController: UITableViewController {
-    var friends: [Friend] = []
+    var friends: [[String: String]] = [["name": "Narjis", "phone": "7894561230", "email":"narjis@yahoo.com"],
+                                       ["name": "Rabab", "phone": "1234567895", "email":"rabab@gmail.com"],
+                                       ["name": "Bilal", "phone": "7531264890", "email":"bilal@yahoo.com"],
+                                       ["name": "Arun", "phone": "99638527414", "email":"arun@gmail.com"],
+                                       ["name": "Jhon", "phone": "5689741235", "email":"jhon@gmail.com"],
+                                       ["name": "Jacob", "phone": "8855227744", "email":"jacob@rediff.com"],
+                                       ["name": "Tina", "phone": "2255889966", "email":"tina@hotmail.com"],
+                                       ["name": "Pooja", "phone": "1144552288", "email":"pooja@gmail.com"]]
 
-    @IBAction func addbutton(_ sender: Any) {
-        performSegue(withIdentifier: "showAddFriend", sender: self)
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           self.title = "Friends"
+
+           loadFriends()
+           
+           self.navigationItem.leftBarButtonItem = self.editButtonItem
+       }
+
+       // MARK: - Table view data source
+
+       override func numberOfSections(in tableView: UITableView) -> Int {
+           return 1
+       }
+
+       override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return friends.count
+       }
+
+       override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendTableViewCell
+
+           let friend = friends[indexPath.row]
+           cell.nameLabel.text = friend["name"]
+           cell.phoneLabel.text = friend["phone"]
+           cell.emailLabel.text = friend["email"]
+           
+           cell.cityImageView.image = UIImage(named: "cityimage")
+           cell.sportsImageView.image = UIImage(named: "sportsimage")
+           cell.foodImageView.image = UIImage(named: "foodimage")
+
+                   return cell
+               }
+
+               override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                   if editingStyle == .delete {
+                       friends.remove(at: indexPath.row)
+                       saveFriends()
+                       tableView.deleteRows(at: [indexPath], with: .fade)
+                   }
+               }
+
+               override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+                   let movedFriend = friends.remove(at: fromIndexPath.row)
+                   friends.insert(movedFriend, at: to.row)
+                   saveFriends()
+               }
+
+               override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                   if segue.identifier == "showAddFriend" {
+                   let addFriendVC = segue.destination as! AddFriendViewController
+                       addFriendVC.delegate = self
+                   }
+               }
+
+               func saveFriends() {
+                   UserDefaults.standard.set(friends, forKey: "friends")
+               }
+
+    func loadFriends() {
+            if let savedFriends = UserDefaults.standard.array(forKey: "friends") as? [[String: String]] {
+                friends = savedFriends
+            }
+        }
     }
-    @IBOutlet weak var foodimage: UIImageView!
-    @IBOutlet weak var sportsimage: UIImageView!
-    @IBOutlet weak var cityimage: UIImageView!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var PhoneLabel: UILabel!
-    @IBOutlet weak var NameLabel: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        super.viewDidLoad()
-               tableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
-               navigationItem.rightBarButtonItem = editButtonItem
+    extension FriendTableViewController: AddFriendDelegate {
+        func didAddFriend(friend: [String: String]) {
+            friends.append(friend)
+            saveFriends()
+            tableView.reloadData()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-          return 1
-      }
-
-      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return friends.count
-      }
-
-      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendTableViewCell
-          let friend = friends[indexPath.row]
-          cell.nameLabel.text = friend.name
-          cell.emailLabel.text = friend.email
-          cell.phoneLabel.text = friend.phone
-          cell.foodImageView.image = friend.foodImage
-          cell.sportsImageView.image = friend.sportsImage
-          cell.cityImageView.image = friend.cityImage
-          return cell
-      }
-
-      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-          if editingStyle == .delete {
-              friends.remove(at: indexPath.row)
-              tableView.deleteRows(at: [indexPath], with: .fade)
-          }
-      }
-
-      override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-          let movedFriend = friends.remove(at: sourceIndexPath.row)
-          friends.insert(movedFriend, at: destinationIndexPath.row)
-      }
-
-      // Prepare for segue to add friend
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          if segue.identifier == "showAddFriend" {
-              if let destinationVC = segue.destination as? AddFriendViewController {
-                  destinationVC.delegate = self
-              }
-          }
-      }
-  }
-
-  extension FriendTableViewController: AddFriendDelegate {
-      func didAddFriend(_ friend: Friend) {
-          friends.append(friend)
-          tableView.reloadData()
-      }
-  }
+    }
