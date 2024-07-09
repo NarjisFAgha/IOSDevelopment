@@ -18,7 +18,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TFv-gf-2oj">
                                 <rect key="frame" x="20" y="64" width="374" height="652"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Welcome to the Diary of a Wimpy Kid app! Dive into the hilarious world of Greg Heffley and his adventures through middle school. Whether you're a fan of the books or new to the series, this app is designed to bring the humor and excitement of Diary of a Wimpy Kid to your fingertips.
 
 About the App:
@@ -38,7 +38,7 @@ Level 2: Recommended for ages 10-12
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TFv-gf-2oj" secondAttribute="trailing" constant="20" id="89h-iK-HTh"/>
                             <constraint firstItem="TFv-gf-2oj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Hqz-DA-wsP"/>
@@ -78,7 +78,7 @@ Level 2: Recommended for ages 10-12
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v64-Oq-Zs9"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e9m-b9-2vT" firstAttribute="centerX" secondItem="dhM-bn-0jp" secondAttribute="centerX" id="Bgt-gF-PxI"/>
                             <constraint firstItem="e9m-b9-2vT" firstAttribute="top" secondItem="v64-Oq-Zs9" secondAttribute="top" constant="80" id="x7T-rv-o4b"/>
@@ -122,7 +122,7 @@ Level 2: Recommended for ages 10-12
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-nn-MYc">
                                         <rect key="frame" x="0.0" y="95.333333333333357" width="374" height="254.66666666666663"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Wednesday
 
 Today we had Phys Ed, so the first thing I
@@ -139,7 +139,7 @@ basketball court to see if the Cheese was still there. And sure enough, it was. 
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rbl-Jv-eCE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LqD-vk-Beg" firstAttribute="leading" secondItem="rbl-Jv-eCE" secondAttribute="leading" constant="20" id="6Kg-Rk-Rye"/>
                             <constraint firstItem="rbl-Jv-eCE" firstAttribute="trailing" secondItem="LqD-vk-Beg" secondAttribute="trailing" constant="20" id="82y-m9-rUA"/>
@@ -174,7 +174,7 @@ basketball court to see if the Cheese was still there. And sure enough, it was. 
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ZS1-9u-5cX">
                                         <rect key="frame" x="0.0" y="95.333333333333343" width="374" height="396.66666666666663"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Thursday
 
 I’m having a seriously hard time getting used to the fact that summer is over and I have to get out of bed every morning to go to school. My summer did not exactly get off to a great start, thanks to my older brother Rodrick. A couple of days into summer vacation, Rodrick woke me up in the middle of the night. </string>
@@ -186,7 +186,7 @@ I’m having a seriously hard time getting used to the fact that summer is over 
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xL8-NV-LQ5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p3H-G5-F0o" firstAttribute="leading" secondItem="xL8-NV-LQ5" secondAttribute="leading" constant="20" id="4yK-Yg-Vtp"/>
                             <constraint firstItem="xL8-NV-LQ5" firstAttribute="trailing" secondItem="p3H-G5-F0o" secondAttribute="trailing" constant="20" id="7G8-cL-9ar"/>
@@ -243,7 +243,7 @@ I’m having a seriously hard time getting used to the fact that summer is over 
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yC2-zy-dV8"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.27843138575553894" green="0.91372555494308472" blue="0.79215693473815918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3cN-TX-0Yv" firstAttribute="top" secondItem="yC2-zy-dV8" secondAttribute="top" constant="50" id="KEp-sE-vhx"/>
                             <constraint firstItem="3cN-TX-0Yv" firstAttribute="centerX" secondItem="SHy-uH-usK" secondAttribute="centerX" id="ozg-Qo-PmT"/>
@@ -275,7 +275,7 @@ I’m having a seriously hard time getting used to the fact that summer is over 
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="cqV-Ei-MXt">
                                         <rect key="frame" x="0.0" y="95.333333333333343" width="374" height="396.66666666666663"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Today is the first day of school, and right now
 we’re just waiting around for the teacher to hurry up and finish the seating chart. So I figured I might as well write in this book to pass the time. By the way, let me give you some good advice. On the first day of school, you got to be real careful and just plunk your stuff down on any old desk and the next thing you know the teacher is saying—
 </string>
@@ -287,7 +287,7 @@ we’re just waiting around for the teacher to hurry up and finish the seating c
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zb1-dW-oxw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zb1-dW-oxw" firstAttribute="trailing" secondItem="LD9-L2-HtB" secondAttribute="trailing" constant="20" id="e3C-ld-Z9c"/>
                             <constraint firstItem="LD9-L2-HtB" firstAttribute="leading" secondItem="zb1-dW-oxw" secondAttribute="leading" constant="20" id="qL1-rR-V8r"/>
@@ -332,7 +332,7 @@ we’re just waiting around for the teacher to hurry up and finish the seating c
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8on-be-R0p">
                                         <rect key="frame" x="0.0" y="95.333333333333357" width="374" height="254.66666666666663"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Join Greg Heffley in his very first diary entry as he navigates the treacherous waters of middle school. From dodging bullies to trying to impress his crush, Greg's life is anything but ordinary. With hilarious illustrations and relatable experiences, this book will have young readers chuckling along with Greg's antics from start to finish. As Greg documents his daily trials and tribulations, readers will find themselves drawn into his world, eagerly turning the pages to see what crazy escapades he'll get into next.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -345,7 +345,7 @@ we’re just waiting around for the teacher to hurry up and finish the seating c
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o3v-Qh-fe6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="F56-XJ-XHR" firstAttribute="leading" secondItem="o3v-Qh-fe6" secondAttribute="leading" constant="20" id="3gv-Nq-NwU"/>
                             <constraint firstItem="ter-YQ-hGv" firstAttribute="leading" secondItem="o3v-Qh-fe6" secondAttribute="leading" constant="20" id="VUX-XW-tJt"/>
@@ -380,7 +380,7 @@ we’re just waiting around for the teacher to hurry up and finish the seating c
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="20V-2f-uJ4">
                                         <rect key="frame" x="0.0" y="95.333333333333343" width="374" height="396.66666666666663"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Tuesday
 First of all, let me get something straight: This is a Journal, not a diary. I know what it says on the cover, but when Mom went out to buy this thing I specifically told her to get one that didn’t say “diary” on it. Great. All I need is for some jerk to catch me this book around and get the wrong idea.
 </string>
@@ -392,7 +392,7 @@ First of all, let me get something straight: This is a Journal, not a diary. I k
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ztm-eb-eL5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27843138579999999" green="0.91372555489999996" blue="0.79215693470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9qA-Fg-1ZQ" firstAttribute="top" secondItem="Ztm-eb-eL5" secondAttribute="top" constant="100" id="Gxy-av-y4r"/>
                             <constraint firstItem="Ztm-eb-eL5" firstAttribute="bottom" secondItem="9qA-Fg-1ZQ" secondAttribute="bottom" constant="100" id="MId-Ph-jYD"/>
@@ -513,9 +513,6 @@ First of all, let me get something straight: This is a Journal, not a diary. I k
         <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

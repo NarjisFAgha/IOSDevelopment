@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D4169DD2C13A19700676485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4169DC2C13A19700676485 /* Assets.xcassets */; };
+		2D6A14832C3DCE6E00984ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A14822C3DCE6E00984ED1 /* Assets.xcassets */; };
 		2D7314602C19070A00CF6FFB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D73145F2C19070A00CF6FFB /* Launch Screen.storyboard */; };
 		2DC9B5872C10D7E1005050CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC9B5862C10D7E1005050CD /* AppDelegate.swift */; };
 		2DC9B5892C10D7E1005050CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC9B5882C10D7E1005050CD /* SceneDelegate.swift */; };
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D4169DC2C13A19700676485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		2D6A14822C3DCE6E00984ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D73145F2C19070A00CF6FFB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2DC9B5832C10D7E1005050CD /* Lab5_Multipage_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab5_Multipage_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC9B5862C10D7E1005050CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 				2DC9B5882C10D7E1005050CD /* SceneDelegate.swift */,
 				2DC9B58A2C10D7E1005050CD /* ViewController.swift */,
 				2DC9B58C2C10D7E1005050CD /* Main.storyboard */,
-				2D4169DC2C13A19700676485 /* Assets.xcassets */,
 				2DC9B5942C10D7E2005050CD /* Info.plist */,
 				2D73145F2C19070A00CF6FFB /* Launch Screen.storyboard */,
+				2D6A14822C3DCE6E00984ED1 /* Assets.xcassets */,
 			);
 			path = Lab5_Multipage_App;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7314602C19070A00CF6FFB /* Launch Screen.storyboard in Resources */,
-				2D4169DD2C13A19700676485 /* Assets.xcassets in Resources */,
+				2D6A14832C3DCE6E00984ED1 /* Assets.xcassets in Resources */,
 				2DC9B58E2C10D7E1005050CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
