@@ -101,7 +101,6 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
             if editingStyle == .delete {
                 sections[indexPath.section].items.remove(at: indexPath.row)
                 if sections[indexPath.section].items.isEmpty {
-                    // Remove rows instead of section to retain the section
                     tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
                 } else {
                     tableView.deleteRows(at: [indexPath], with: .fade)

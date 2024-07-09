@@ -1,9 +1,9 @@
 import UIKit
 
-class TaskManager {
-    static let shared = TaskManager()
+class taskHandler {
+    static let shared = taskHandler()
 
-    struct Task: Codable {
+    struct task: Codable {
         var title: String
         var description: String
         var dueDate: String
@@ -19,42 +19,42 @@ class TaskManager {
     }
 
     private init() {
-        loadTasks()
+        taskloading()
     }
 
-    private(set) var tasks: [Task] = [] {
+    private(set) var tasks: [task] = [] {
         didSet {
-            saveTasks()
+            savingtask()
         }
     }
     
-    func addTask(_ task: Task) {
+    func taskappending(_ task: task) {
         tasks.append(task)
     }
 
-    func removeTask(at index: Int) {
+    func taskremoval(at index: Int) {
         tasks.remove(at: index)
     }
 
-    private func saveTasks() {
+    private func savingtask() {
         if let encodedTasks = try? JSONEncoder().encode(tasks) {
             UserDefaults.standard.set(encodedTasks, forKey: "tasks")
         }
     }
 
-    private func loadTasks() {
+    private func taskloading() {
         if let savedTasksData = UserDefaults.standard.data(forKey: "tasks"),
-           let savedTasks = try? JSONDecoder().decode([Task].self, from: savedTasksData) {
+           let savedTasks = try? JSONDecoder().decode([task].self, from: savedTasksData) {
             tasks = savedTasks
         } else {
-            addDefaultTasks()
+            DefaultTasks()
         }
     }
 
-    private func addDefaultTasks() {
+    private func DefaultTasks() {
         let defaultTasks = [
-            Task(title: "Complete Homework", description: "Math and Science assignments", dueDate: "07/10/2024", status: "Pending", imageData: UIImage(systemName: "doc.text")?.pngData()),
-            Task(title: "Buy Groceries", description: "Milk, Bread, Eggs, and Vegetables", dueDate: "07/07/2024", status: "In Progress", imageData: UIImage(systemName: "cart")?.pngData())
+            task(title: "Complete Homework", description: "Math and Science assignments", dueDate: "09/28/2024", status: "Pending", imageData: UIImage(systemName: "doc.text")?.pngData()),
+            task(title: "Buy Groceries", description: "Milk, Bread, Eggs, and Vegetables", dueDate: "08/25/2024", status: "In Progress", imageData: UIImage(systemName: "cart")?.pngData())
         ]
         
         tasks.append(contentsOf: defaultTasks)

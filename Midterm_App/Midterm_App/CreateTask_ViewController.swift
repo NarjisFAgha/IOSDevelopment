@@ -22,14 +22,12 @@ class CreateTask_ViewController: UIViewController, UIImagePickerControllerDelega
         override func viewDidLoad() {
             super.viewDidLoad()
 
-            // Date Picker Setup
             datePicker.datePickerMode = .date
             datePicker.preferredDatePickerStyle = .wheels
             datePicker.minimumDate = Date()
             datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
             dueDateTextField.inputView = datePicker
 
-            // Toolbar for Date Picker
             let toolbar = UIToolbar()
             toolbar.sizeToFit()
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneDatePicker))
@@ -37,7 +35,6 @@ class CreateTask_ViewController: UIViewController, UIImagePickerControllerDelega
             toolbar.setItems([flexibleSpace, doneButton], animated: true)
             dueDateTextField.inputAccessoryView = toolbar
 
-            // Setup status button action
             statusButton.addTarget(self, action: #selector(showStatusAlert), for: .touchUpInside)
         }
 
@@ -89,8 +86,8 @@ class CreateTask_ViewController: UIViewController, UIImagePickerControllerDelega
                     return
                 }
 
-                let task = TaskManager.Task(title: title, description: description, dueDate: dueDate, status: status, imageData: imageData)
-                TaskManager.shared.addTask(task)
+                let task = taskHandler.task(title: title, description: description, dueDate: dueDate, status: status, imageData: imageData)
+                taskHandler.shared.taskappending(task)
 
                 showAlert(message: "Task created successfully!")
                 resetFields()

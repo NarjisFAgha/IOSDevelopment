@@ -2,7 +2,7 @@ import UIKit
 
 class Task_List_TableViewController: UITableViewController {
 
-    var filteredTasks: [TaskManager.Task] = []
+    var filteredTasks: [taskHandler.task] = []
     var currentFilters = FilterSettings()
 
     override func viewDidLoad() {
@@ -13,7 +13,8 @@ class Task_List_TableViewController: UITableViewController {
         super.viewWillAppear(animated)
         loadFilters()
         applyFilters()
-        tableView.reloadData()  // Reload data when the view appears
+        tableView.reloadData()
+        
     }
 
     func loadFilters() {
@@ -23,7 +24,7 @@ class Task_List_TableViewController: UITableViewController {
     }
 
     func applyFilters() {
-        filteredTasks = TaskManager.shared.tasks
+        filteredTasks = taskHandler.shared.tasks
         
         if currentFilters.sortOrFilter == 1 { // Filter
             switch currentFilters.statusFilter {
@@ -70,13 +71,12 @@ class Task_List_TableViewController: UITableViewController {
 
         return cell
     }
-
-    // Swipe to delete functionality
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let taskToRemove = filteredTasks[indexPath.row]
-            if let index = TaskManager.shared.tasks.firstIndex(where: { $0.title == taskToRemove.title }) {
-                TaskManager.shared.removeTask(at: index)
+            if let index = taskHandler.shared.tasks.firstIndex(where: { $0.title == taskToRemove.title }) {
+                taskHandler.shared.taskremoval(at: index)
                 applyFilters()
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -86,8 +86,7 @@ class Task_List_TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-
-    // Navigation to detailed task view
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTaskDetail",
            let destinationVC = segue.destination as? TaskDetailViewController,

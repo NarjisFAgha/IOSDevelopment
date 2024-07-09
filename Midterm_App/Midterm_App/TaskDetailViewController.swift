@@ -16,7 +16,7 @@ class TaskDetailViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
-    var task: TaskManager.Task?
+    var task: taskHandler.task?
         
         override func viewDidLoad() {
             super.viewDidLoad()

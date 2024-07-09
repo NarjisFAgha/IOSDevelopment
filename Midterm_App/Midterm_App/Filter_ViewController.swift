@@ -26,7 +26,6 @@ class Filter_ViewController: UIViewController {
     
     @IBAction func ApplyButton(_ sender: Any) {
         saveSettings()
-        // Dismiss the settings view
         navigationController?.popViewController(animated: true)
     }
     
@@ -42,23 +41,19 @@ class Filter_ViewController: UIViewController {
        }
 
        func setupSegmentedControls() {
-           // Sort or Filter Segmented Control
            sortOrFilterSegmentedControl = UISegmentedControl(items: ["Sort", "Filter"])
            sortOrFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
            sortOrFilterSegmentedControl.addTarget(self, action: #selector(sortOrFilterChanged), for: .valueChanged)
            view.addSubview(sortOrFilterSegmentedControl)
 
-           // Sort by Due Date Segmented Control
            sortByDueDateSegmentedControl = UISegmentedControl(items: ["Ascending", "Descending"])
            sortByDueDateSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
            view.addSubview(sortByDueDateSegmentedControl)
 
-           // Status Filter Segmented Control
            statusFilterSegmentedControl = UISegmentedControl(items: ["All", "Pending", "In Progress", "Completed"])
            statusFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
            view.addSubview(statusFilterSegmentedControl)
 
-           // Add constraints to position the segmented controls
            NSLayoutConstraint.activate([
                sortOrFilterSegmentedControl.topAnchor.constraint(equalTo: SettingLabel.bottomAnchor, constant: 20),
                sortOrFilterSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -73,7 +68,6 @@ class Filter_ViewController: UIViewController {
                statusFilterSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
            ])
 
-           // Initially hide sort and filter controls
            toggleSortAndFilterControls(show: false)
        }
 
@@ -82,10 +76,8 @@ class Filter_ViewController: UIViewController {
                // Sort selected
                toggleSortAndFilterControls(show: true, isSort: true)
            } else if sortOrFilterSegmentedControl.selectedSegmentIndex == 1 {
-               // Filter selected
                toggleSortAndFilterControls(show: true, isSort: false)
            } else {
-               // No selection
                toggleSortAndFilterControls(show: false)
            }
        }

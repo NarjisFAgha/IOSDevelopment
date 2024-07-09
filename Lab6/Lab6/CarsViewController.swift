@@ -45,7 +45,7 @@ class CarsViewController: UITableViewController {
         let addAction = UIAlertAction(title: "Add", style: .default) { _ in
             guard let make = alert.textFields?[0].text, !make.isEmpty,
                   let model = alert.textFields?[1].text, !model.isEmpty else {
-                // Handle case where text fields are empty (optional)
+                
                 return
             }
             
@@ -67,7 +67,6 @@ class CarsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Use the correct style to ensure the cell has a detailTextLabel
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         let car = cars[indexPath.row]
         cell.imageView?.image = car.image
