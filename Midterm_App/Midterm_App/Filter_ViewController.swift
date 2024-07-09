@@ -18,11 +18,10 @@ class Filter_ViewController: UIViewController {
     
     @IBAction func ClearButton(_ sender: Any) {
         sortByDueDateSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
-                      sortByStatusSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
-                      statusFilterSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
-                      sortOrFilterSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
-                      toggleSortAndFilterControls(show: false)
-                      saveSettings()
+        statusFilterSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
+        sortOrFilterSegmentedControl.selectedSegmentIndex = UISegmentedControl.noSegment
+        toggleSortAndFilterControls(show: false)
+        saveSettings()
     }
     
     @IBAction func ApplyButton(_ sender: Any) {
@@ -32,114 +31,99 @@ class Filter_ViewController: UIViewController {
     }
     
     var sortOrFilterSegmentedControl: UISegmentedControl!
-        var sortByDueDateSegmentedControl: UISegmentedControl!
-        var sortByStatusSegmentedControl: UISegmentedControl!
-        var statusFilterSegmentedControl: UISegmentedControl!
+    var sortByDueDateSegmentedControl: UISegmentedControl!
+    var statusFilterSegmentedControl: UISegmentedControl!
 
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            setupSegmentedControls()
-            loadSettings()
-        }
+    override func viewDidLoad() {
+           super.viewDidLoad()
+           setupSegmentedControls()
+           loadSettings()
+       }
 
-        func setupSegmentedControls() {
-            // Sort or Filter Segmented Control
-            sortOrFilterSegmentedControl = UISegmentedControl(items: ["Sort", "Filter"])
-            sortOrFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-            sortOrFilterSegmentedControl.addTarget(self, action: #selector(sortOrFilterChanged), for: .valueChanged)
-            view.addSubview(sortOrFilterSegmentedControl)
+       func setupSegmentedControls() {
+           // Sort or Filter Segmented Control
+           sortOrFilterSegmentedControl = UISegmentedControl(items: ["Sort", "Filter"])
+           sortOrFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+           sortOrFilterSegmentedControl.addTarget(self, action: #selector(sortOrFilterChanged), for: .valueChanged)
+           view.addSubview(sortOrFilterSegmentedControl)
 
-            // Sort by Due Date Segmented Control
-            sortByDueDateSegmentedControl = UISegmentedControl(items: ["Ascending", "Descending"])
-            sortByDueDateSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(sortByDueDateSegmentedControl)
+           // Sort by Due Date Segmented Control
+           sortByDueDateSegmentedControl = UISegmentedControl(items: ["Ascending", "Descending"])
+           sortByDueDateSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+           view.addSubview(sortByDueDateSegmentedControl)
 
-            // Sort by Status Segmented Control
-            sortByStatusSegmentedControl = UISegmentedControl(items: ["Pending", "In Progress", "Completed"])
-            sortByStatusSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(sortByStatusSegmentedControl)
+           // Status Filter Segmented Control
+           statusFilterSegmentedControl = UISegmentedControl(items: ["All", "Pending", "In Progress", "Completed"])
+           statusFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+           view.addSubview(statusFilterSegmentedControl)
 
-            // Status Filter Segmented Control
-            statusFilterSegmentedControl = UISegmentedControl(items: ["All", "Pending", "In Progress", "Completed"])
-            statusFilterSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(statusFilterSegmentedControl)
+           // Add constraints to position the segmented controls
+           NSLayoutConstraint.activate([
+               sortOrFilterSegmentedControl.topAnchor.constraint(equalTo: SettingLabel.bottomAnchor, constant: 20),
+               sortOrFilterSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+               sortOrFilterSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
-            // Add constraints to position the segmented controls
-            NSLayoutConstraint.activate([
-                sortOrFilterSegmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-                sortOrFilterSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                sortOrFilterSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+               sortByDueDateSegmentedControl.topAnchor.constraint(equalTo: sortOrFilterSegmentedControl.bottomAnchor, constant: 10),
+               sortByDueDateSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+               sortByDueDateSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+               
+               statusFilterSegmentedControl.topAnchor.constraint(equalTo: sortOrFilterSegmentedControl.bottomAnchor, constant: 10),
+               statusFilterSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+               statusFilterSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+           ])
 
-                sortByDueDateSegmentedControl.topAnchor.constraint(equalTo: sortOrFilterSegmentedControl.bottomAnchor, constant: 20),
-                sortByDueDateSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                sortByDueDateSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+           // Initially hide sort and filter controls
+           toggleSortAndFilterControls(show: false)
+       }
 
-                sortByStatusSegmentedControl.topAnchor.constraint(equalTo: sortByDueDateSegmentedControl.bottomAnchor, constant: 20),
-                sortByStatusSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                sortByStatusSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+       @objc func sortOrFilterChanged() {
+           if sortOrFilterSegmentedControl.selectedSegmentIndex == 0 {
+               // Sort selected
+               toggleSortAndFilterControls(show: true, isSort: true)
+           } else if sortOrFilterSegmentedControl.selectedSegmentIndex == 1 {
+               // Filter selected
+               toggleSortAndFilterControls(show: true, isSort: false)
+           } else {
+               // No selection
+               toggleSortAndFilterControls(show: false)
+           }
+       }
 
-                statusFilterSegmentedControl.topAnchor.constraint(equalTo: sortByStatusSegmentedControl.bottomAnchor, constant: 20),
-                statusFilterSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                statusFilterSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-            ])
+       func toggleSortAndFilterControls(show: Bool, isSort: Bool = true) {
+           if show {
+               if isSort {
+                   sortByDueDateSegmentedControl.isHidden = false
+                   statusFilterSegmentedControl.isHidden = true
+               } else {
+                   sortByDueDateSegmentedControl.isHidden = true
+                   statusFilterSegmentedControl.isHidden = false
+               }
+           } else {
+               sortByDueDateSegmentedControl.isHidden = true
+               statusFilterSegmentedControl.isHidden = true
+           }
+       }
 
-            // Initially hide sort and filter controls
-            toggleSortAndFilterControls(show: false)
-        }
+       private func saveSettings() {
+           let sortByDueDateIndex = sortByDueDateSegmentedControl.selectedSegmentIndex
+           let statusFilterIndex = statusFilterSegmentedControl.selectedSegmentIndex
+           let sortOrFilterIndex = sortOrFilterSegmentedControl.selectedSegmentIndex
 
-        @objc func sortOrFilterChanged() {
-            if sortOrFilterSegmentedControl.selectedSegmentIndex == 0 {
-                // Sort selected
-                toggleSortAndFilterControls(show: true, isSort: true)
-            } else if sortOrFilterSegmentedControl.selectedSegmentIndex == 1 {
-                // Filter selected
-                toggleSortAndFilterControls(show: true, isSort: false)
-            } else {
-                // No selection
-                toggleSortAndFilterControls(show: false)
-            }
-        }
+           UserDefaults.standard.set(sortByDueDateIndex, forKey: "sortByDueDate")
+           UserDefaults.standard.set(statusFilterIndex, forKey: "statusFilter")
+           UserDefaults.standard.set(sortOrFilterIndex, forKey: "sortOrFilter")
+       }
 
-        func toggleSortAndFilterControls(show: Bool, isSort: Bool = true) {
-            sortByDueDateSegmentedControl.isHidden = !(show && isSort)
-            sortByStatusSegmentedControl.isHidden = !(show && isSort)
-            statusFilterSegmentedControl.isHidden = !(show && !isSort)
-        }
+       private func loadSettings() {
+           let sortByDueDateIndex = UserDefaults.standard.integer(forKey: "sortByDueDate")
+           let statusFilterIndex = UserDefaults.standard.integer(forKey: "statusFilter")
+           let sortOrFilterIndex = UserDefaults.standard.integer(forKey: "sortOrFilter")
 
-        private func saveSettings() {
-            let sortByDueDateIndex = sortByDueDateSegmentedControl.selectedSegmentIndex
-            let sortByStatusIndex = sortByStatusSegmentedControl.selectedSegmentIndex
-            let statusFilterIndex = statusFilterSegmentedControl.selectedSegmentIndex
-            let sortOrFilterIndex = sortOrFilterSegmentedControl.selectedSegmentIndex
+           sortByDueDateSegmentedControl.selectedSegmentIndex = sortByDueDateIndex
+           statusFilterSegmentedControl.selectedSegmentIndex = statusFilterIndex
+           sortOrFilterSegmentedControl.selectedSegmentIndex = sortOrFilterIndex
 
-            UserDefaults.standard.set(sortByDueDateIndex, forKey: "sortByDueDate")
-            UserDefaults.standard.set(sortByStatusIndex, forKey: "sortByStatus")
-            UserDefaults.standard.set(statusFilterIndex, forKey: "statusFilter")
-            UserDefaults.standard.set(sortOrFilterIndex, forKey: "sortOrFilter")
-        }
-
-        private func loadSettings() {
-            let sortByDueDateIndex = UserDefaults.standard.integer(forKey: "sortByDueDate")
-            let sortByStatusIndex = UserDefaults.standard.integer(forKey: "sortByStatus")
-            let statusFilterIndex = UserDefaults.standard.integer(forKey: "statusFilter")
-            let sortOrFilterIndex = UserDefaults.standard.integer(forKey: "sortOrFilter")
-
-            sortByDueDateSegmentedControl.selectedSegmentIndex = sortByDueDateIndex
-            sortByStatusSegmentedControl.selectedSegmentIndex = sortByStatusIndex
-            statusFilterSegmentedControl.selectedSegmentIndex = statusFilterIndex
-            sortOrFilterSegmentedControl.selectedSegmentIndex = sortOrFilterIndex
-
-            sortOrFilterChanged()
-        }
-            /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+           sortOrFilterChanged()
+       }
+   }
