@@ -146,7 +146,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
        func updateUI(cityName: String, description: String, icon: String, temp: Double, humidity: Int, windSpeed: Double) {
            locationLabel.text = cityName
            weatherdescription.text = description
-           tempLabel.text = "\(temp)°C"
+           tempLabel.text = "\(Int(temp))°C"
            humidityLabel.text = "Humidity: \(humidity)%"
            windLabel.text = "Wind Speed: \(windSpeed) m/s"
            
