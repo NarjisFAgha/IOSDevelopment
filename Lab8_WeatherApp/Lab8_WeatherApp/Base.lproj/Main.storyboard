@@ -43,26 +43,24 @@
                                 <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9eN-Ww-LE2">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9eN-Ww-LE2">
                                 <rect key="frame" x="10" y="683.33333333333337" width="408" height="19.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jl-Ql-qWE">
-                                        <rect key="frame" x="0.0" y="0.0" width="194" height="19.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201.66666666666666" height="19.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ts-Ro-gxV">
-                                        <rect key="frame" x="214" y="0.0" width="194" height="19.666666666666668"/>
+                                        <rect key="frame" x="206.66666666666663" y="0.0" width="201.33333333333337" height="19.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
-                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.086274512112140656" green="0.58039218187332153" blue="0.7137255072593689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.64705884456634521" green="0.71764707565307617" blue="0.086274512112140656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5BF-Tz-vB7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="IXM-ZJ-2cK"/>
                             <constraint firstItem="5BF-Tz-vB7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QkF-ML-RwD"/>

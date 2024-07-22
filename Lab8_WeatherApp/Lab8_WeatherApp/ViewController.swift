@@ -136,23 +136,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                let windSpeed = decodedData.wind.speed
                
                DispatchQueue.main.async {
-                              self.updateUI(cityName: cityName, description: description, icon: icon, temp: temp, humidity: humidity, windSpeed: windSpeed)
+                            self.updateUI(cityName: cityName, description: description, icon: icon, temp: temp, humidity: humidity, windSpeed: windSpeed)
                           }
-           } catch {
+           }
+    catch {
                print(error)
            }
        }
        
-       func updateUI(cityName: String, description: String, icon: String, temp: Double, humidity: Int, windSpeed: Double) {
-           locationLabel.text = cityName
-           weatherdescription.text = description
-           tempLabel.text = "\(Int(temp))°C"
-           humidityLabel.text = "Humidity: \(humidity)%"
-           windLabel.text = "Wind Speed: \(windSpeed) m/s"
-           
-           let iconUrl = URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")
-           if let data = try? Data(contentsOf: iconUrl!) {
-               weatherImage.image = UIImage(data: data)
-           }
-       }
+    func updateUI(cityName: String, description: String, icon: String, temp: Double, humidity: Int, windSpeed: Double) {
+        locationLabel.text = cityName
+        weatherdescription.text = description
+        tempLabel.text = String(format: "%.0f°C", temp)
+        humidityLabel.text = "Humidity: \(humidity)%"
+        let windSpeedKmH = windSpeed * 3.6
+         windLabel.text = String(format: "Wind Speed: %.2f km/h", windSpeedKmH)
+        
+        let iconUrlString = "https://openweathermap.org/img/wn/\(icon)@2x.png"
+        if let iconUrl = URL(string: iconUrlString) {
+            let task = URLSession.shared.dataTask(with: iconUrl) { data, response, error in
+                if let data = data, error == nil {
+                    DispatchQueue.main.async {
+                        self.weatherImage.image = UIImage(data: data)
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+
    }
