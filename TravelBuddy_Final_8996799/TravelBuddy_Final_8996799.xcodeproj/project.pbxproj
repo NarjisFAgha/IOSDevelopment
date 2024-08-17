@@ -17,6 +17,11 @@
 		2D0D7A422C6FC4D00011DFC9 /* TravelBuddy_Final_8996799Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D7A412C6FC4D00011DFC9 /* TravelBuddy_Final_8996799Tests.swift */; };
 		2D0D7A4C2C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D7A4B2C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITests.swift */; };
 		2D0D7A4E2C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D7A4D2C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITestsLaunchTests.swift */; };
+		2D8965C02C71251A00A084D0 /* Add_trip_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8965BF2C71251A00A084D0 /* Add_trip_ViewController.swift */; };
+		2D8965C62C71342700A084D0 /* My_Trip_List_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8965C52C71342700A084D0 /* My_Trip_List_TableViewController.swift */; };
+		2D8965C82C71369700A084D0 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8965C72C71369700A084D0 /* TripDetailViewController.swift */; };
+		2DACBC232C7154080057CC17 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACBC222C7154080057CC17 /* UIImageView.swift */; };
+		2DACBC252C7154870057CC17 /* TripExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DACBC242C7154870057CC17 /* TripExpenseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		2D0D7A472C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelBuddy_Final_8996799UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0D7A4B2C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBuddy_Final_8996799UITests.swift; sourceTree = "<group>"; };
 		2D0D7A4D2C6FC4D00011DFC9 /* TravelBuddy_Final_8996799UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBuddy_Final_8996799UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2D8965BF2C71251A00A084D0 /* Add_trip_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add_trip_ViewController.swift; sourceTree = "<group>"; };
+		2D8965C52C71342700A084D0 /* My_Trip_List_TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Trip_List_TableViewController.swift; sourceTree = "<group>"; };
+		2D8965C72C71369700A084D0 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
+		2DACBC222C7154080057CC17 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		2DACBC242C7154870057CC17 /* TripExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripExpenseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +115,15 @@
 				2D0D7A292C6FC4CE0011DFC9 /* SceneDelegate.swift */,
 				2D0D7A2B2C6FC4CE0011DFC9 /* ViewController.swift */,
 				2D0D7A2D2C6FC4CE0011DFC9 /* Main.storyboard */,
+				2DACBC242C7154870057CC17 /* TripExpenseViewController.swift */,
+				2D8965C72C71369700A084D0 /* TripDetailViewController.swift */,
+				2D8965C52C71342700A084D0 /* My_Trip_List_TableViewController.swift */,
+				2D8965BF2C71251A00A084D0 /* Add_trip_ViewController.swift */,
 				2D0D7A332C6FC4D00011DFC9 /* Assets.xcassets */,
 				2D0D7A352C6FC4D00011DFC9 /* LaunchScreen.storyboard */,
 				2D0D7A382C6FC4D00011DFC9 /* Info.plist */,
 				2D0D7A302C6FC4CE0011DFC9 /* TravelBuddy_Final_8996799.xcdatamodeld */,
+				2DACBC222C7154080057CC17 /* UIImageView.swift */,
 			);
 			path = TravelBuddy_Final_8996799;
 			sourceTree = "<group>";
@@ -261,10 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DACBC232C7154080057CC17 /* UIImageView.swift in Sources */,
+				2D8965C62C71342700A084D0 /* My_Trip_List_TableViewController.swift in Sources */,
+				2D8965C82C71369700A084D0 /* TripDetailViewController.swift in Sources */,
 				2D0D7A2C2C6FC4CE0011DFC9 /* ViewController.swift in Sources */,
 				2D0D7A322C6FC4CE0011DFC9 /* TravelBuddy_Final_8996799.xcdatamodeld in Sources */,
 				2D0D7A282C6FC4CE0011DFC9 /* AppDelegate.swift in Sources */,
+				2D8965C02C71251A00A084D0 /* Add_trip_ViewController.swift in Sources */,
 				2D0D7A2A2C6FC4CE0011DFC9 /* SceneDelegate.swift in Sources */,
+				2DACBC252C7154870057CC17 /* TripExpenseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
