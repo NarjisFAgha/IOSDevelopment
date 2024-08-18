@@ -13,68 +13,53 @@ import CoreLocation
 
 // MARK: - TrackWeather
 struct TrackWeather: Codable {
-    let coord: Coord
+    struct Main: Codable {
+        let temp: Double
+        let feels_like: Double
+        let temp_min: Double
+        let temp_max: Double
+        let pressure: Int
+        let humidity: Int
+        let sea_level: Int?
+        let grnd_level: Int?
+    }
+    struct Weather: Codable {
+        let id: Int
+        let main: String
+        let description: String
+        let icon: String
+    }
+    struct Wind: Codable {
+        let speed: Double
+        let deg: Int
+        let gust: Double?
+    }
+    struct Sys: Codable {
+        let country: String
+        let sunrise: Int
+        let sunset: Int
+    }
+    
+    let coord: [String: Double]
     let weather: [Weather]
-    let base: String
+    let base: String?
     let main: Main
     let visibility: Int
     let wind: Wind
-    let clouds: Clouds
+    let clouds: [String: Int]
     let dt: Int
     let sys: Sys
-    let timezone, id: Int
+    let timezone: Int
+    let id: Int
     let name: String
     let cod: Int
-}
-
-// MARK: - Clouds
-struct Clouds: Codable {
-    let all: Int
-}
-
-// MARK: - Coord
-struct Coord: Codable {
-    let lon, lat: Double
-}
-
-// MARK: - Main
-struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, humidity, seaLevel, grndLevel: Int
-
-    enum CodingKeys: String, CodingKey {
-        case temp
-        case feelsLike = "feels_like"
-        case tempMin = "temp_min"
-        case tempMax = "temp_max"
-        case pressure, humidity
-        case seaLevel = "sea_level"
-        case grndLevel = "grnd_level"
-    }
-}
-
-// MARK: - Sys
-struct Sys: Codable {
-    let type, id: Int
-    let country: String
-    let sunrise, sunset: Int
-}
-
-// MARK: - Weather
-struct Weather: Codable {
-    let id: Int
-    let main, description, icon: String
-}
-
-// MARK: - Wind
-struct Wind: Codable {
-    let speed : Double
-      let  deg: Int
 }
 
 class TripDetailViewController: UIViewController {
 
     var trip: Trip?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+       
     @IBOutlet weak var tripExpenseButton: UIBarButtonItem!
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -99,33 +84,58 @@ class TripDetailViewController: UIViewController {
                destinationVC.trip = trip // Pass the current trip object to the TripExpenseViewController
            }
        }
+    
+    
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
+        
+        // Display the trip details
+        if let trip = trip {
+            tripNameLabel.text = trip.tripName
+            destinationLabel.text = trip.destination
+            startLocationLabel.text = trip.startLocation
             
-            // Display the trip details
-            if let trip = trip {
-                tripNameLabel.text = trip.tripName
-                destinationLabel.text = trip.destination
-                startLocationLabel.text = trip.startLocation
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = .medium
-                dateFormatter.timeStyle = .none
-                
-                if let startDate = trip.startDate {
-                    startDateLabel.text = dateFormatter.string(from: startDate)
-                }
-                
-                if let endDate = trip.endDate {
-                    endDateLabel.text = dateFormatter.string(from: endDate)
-                }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            
+            if let startDate = trip.startDate {
+                startDateLabel.text = dateFormatter.string(from: startDate)
+            }
+            
+            if let endDate = trip.endDate {
+                endDateLabel.text = dateFormatter.string(from: endDate)
+            }
 
-                // Display the destination on the map
-                if let destination = trip.destination {
-                    geocodeAddress(address: destination)
-                }
+            // Display the destination on the map
+            if let destination = trip.destination {
+                geocodeAddress(address: destination)
+                fetchWeather(for: destination)
             }
         }
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateTotalExpense()
+    }
+
+    func updateTotalExpense() {
+        guard let trip = trip else { return }
+        
+        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "trip == %@", trip)
+        
+        do {
+            let expenses = try context.fetch(fetchRequest)
+            let total = expenses.reduce(0) { $0 + $1.amount }
+            totalExpense.text = "Total Expense: $\(total)"
+        } catch {
+            print("Failed to fetch expenses: \(error)")
+        }
+    }
+
 
         func geocodeAddress(address: String) {
             geocoder.geocodeAddressString(address) { [weak self] (placemarks, error) in
@@ -151,37 +161,49 @@ class TripDetailViewController: UIViewController {
         }
     
     func fetchWeather(for address: String) {
-        let apiKey = "ef3d604aa3e4a2b0256c098bb7253b58" // API Key should be a constant
+        let apiKey = "ef3d604aa3e4a2b0256c098bb7253b58"
         guard let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Failed to encode address")
             return
         }
-        
+
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(encodedAddress)&appid=\(apiKey)&units=metric"
-        
+
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             return
         }
-        
+
         let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
             if let error = error {
                 print("Weather fetch error: \(error)")
                 return
             }
-            
-            guard let data = data,
-                  let weatherData = try? JSONDecoder().decode(TrackWeather.self, from: data) else {
+
+            if let httpResponse = response as? HTTPURLResponse {
+                print("HTTP Response Code: \(httpResponse.statusCode)")
+            }
+
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Received JSON string: \(jsonString)")
+            }
+
+            guard let weatherData = try? JSONDecoder().decode(TrackWeather.self, from: data) else {
                 print("Invalid data or decoding error")
                 return
             }
-            
+
             DispatchQueue.main.async {
                 self?.windSpeedLabel.text = "Wind Speed: \(weatherData.wind.speed) m/s"
                 self?.humidityLabel.text = "Humidity: \(weatherData.main.humidity)%"
                 self?.temperatureLabel.text = "Temperature: \(weatherData.main.temp)°C"
                 self?.weatherForcastLabel.text = weatherData.weather.first?.description.capitalized
-                
+
                 if let iconCode = weatherData.weather.first?.icon {
                     let iconURLString = "https://openweathermap.org/img/wn/\(iconCode).png"
                     if let iconURL = URL(string: iconURLString) {
@@ -190,7 +212,8 @@ class TripDetailViewController: UIViewController {
                 }
             }
         }
-        
+
         task.resume()
     }
+
 }
