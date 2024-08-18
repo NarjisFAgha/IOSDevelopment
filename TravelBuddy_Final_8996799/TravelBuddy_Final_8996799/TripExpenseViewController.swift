@@ -25,9 +25,14 @@ class TripExpenseViewController: UIViewController, UITableViewDataSource, UITabl
         listOfExpensesTableView.dataSource = self
         listOfExpensesTableView.delegate = self
         
+        // Set the trip name in the label if available
+        if let trip = trip {
+            tripName.text = trip.tripName
+        }
+        
         fetchExpenses()  // Fetch all expenses when the view loads
     }
-    
+
     @IBAction func resetButton(_ sender: Any) {
         expenseName.text = ""
         amounttextfield.text = ""

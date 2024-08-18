@@ -73,6 +73,7 @@ class TripDetailViewController: UIViewController {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var startLocationLabel: UILabel!
     @IBOutlet weak var tripNameLabel: UILabel!
+    
     let geocoder = CLGeocoder()
 
     @IBAction func tripExpenseButton(_ sender: Any) {
@@ -120,6 +121,9 @@ class TripDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         updateTotalExpense()
     }
+    
+  
+
 
     func updateTotalExpense() {
         guard let trip = trip else { return }
