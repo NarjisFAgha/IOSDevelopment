@@ -81,11 +81,13 @@ class TripDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "showExpense", let destinationVC = segue.destination as? TripExpenseViewController {
+           if segue.identifier == "showExpense",
+                let destinationVC = segue.destination as? TripExpenseViewController {
                destinationVC.trip = trip // Pass the current trip object to the TripExpenseViewController
            }
        }
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,10 +121,16 @@ class TripDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        printNavigationStack()
         updateTotalExpense()
     }
     
-  
+    func printNavigationStack() {
+        if let viewControllers = navigationController?.viewControllers {
+            print("Navigation Stack: \(viewControllers.map { String(describing: $0) })")
+        }
+    }
+
 
 
     func updateTotalExpense() {
